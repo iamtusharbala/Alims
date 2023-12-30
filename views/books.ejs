@@ -1,0 +1,41 @@
+<%- include('./partials/navbar') %>
+    <%- layout('./layout/boilerplate') %>
+        <div class="container mt-4">
+
+
+            <a href="/books/add" class="btn btn-primary">Add New Books</a>
+
+            <div class="row d-flex flex-wrap justify-content-center">
+                <% for(let books of fetchBooks){ %>
+                    <div class="card m-3" style="width: 18rem;">
+
+                        <img src="<%=books.imageURL%>" class="img-fluid" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/books/<%= books._id%>">
+                                    <%= books.title %>
+                                </a>
+                            </h5>
+                            <p class="card-text">
+                                <%= books.author %>
+                            </p>
+                            <a href="#" class="text-muted">
+                                <%= books.publishYear %>
+                            </a>
+                        </div>
+
+                    </div>
+                    <% } %>
+
+            </div>
+
+
+        </div>
+
+
+        <style>
+            img {
+                height: 400px !important;
+            }
+        </style>

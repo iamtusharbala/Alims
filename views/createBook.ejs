@@ -1,0 +1,20 @@
+<%- include('./partials/navbar') %>
+    <%- layout('./layout/boilerplate') %>
+        <div class="container">
+            <form action="/books" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter Title" aria-label="title" name="title">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter Author" aria-label="author"
+                        name="author">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter Publishing Year" aria-label="publishYear"
+                        name="publishYear">
+                </div>
+                <button type="submit" class="btn btn-success">Add New Book</button>
+            </form>
+        </div>
